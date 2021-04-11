@@ -1,0 +1,47 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Frontend.ViewModels"
+    x:Class="Frontend.Views.MainWindow"
+    mc:Ignorable="d"
+    d:DesignWidth="800"
+    d:DesignHeight="450"
+    Icon="/Assets/avalonia-logo.ico"
+    Title="Frontend"
+    Background="Transparent"
+    TransparencyLevelHint="AcrylicBlur"
+    ExtendClientAreaToDecorationsHint="True"
+    MinHeight="300"
+    MinWidth="300">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ExperimentalAcrylicBorder
+            Grid.Row="0" Grid.Column="0"
+            IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.65"/>
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <UserControl
+            Grid.Row="0" Grid.Column="0"
+            Content="{Binding MainView}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,58 @@
+<UserControl
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+  d:DesignWidth="800"
+  d:DesignHeight="450"
+  x:Class="Frontend.Views.MainView">
+
+  <Grid ShowGridLines="True">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" MinHeight="50"/>
+      <RowDefinition Height="10*" MinHeight="50"/>
+      <RowDefinition Height="2*" MinHeight="50"/>
+    </Grid.RowDefinitions>
+
+    <DatePicker
+      Grid.Row="0" Grid.Column="0"
+      Grid.ColumnSpan="3"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      SelectedDate="{Binding CurrentDate, Mode=TwoWay}"/>
+    <UserControl
+      Grid.Row="1" Grid.Column="0"
+      Grid.ColumnSpan="3"
+      Content="{Binding ListView}"/>
+    <Button
+      Grid.Row="2" Grid.Column="0"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      HorizontalContentAlignment="Center"
+      VerticalContentAlignment="Center"
+      Command="{Binding OnPreviousClick}"
+      Content="Previous"/>
+    <Button
+      Grid.Row="2" Grid.Column="1"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      HorizontalContentAlignment="Center"
+      VerticalContentAlignment="Center"
+      Command="{Binding OnNewClick}"
+      Content="Create new"/>
+    <Button
+      Grid.Row="2" Grid.Column="2"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      HorizontalContentAlignment="Center"
+      VerticalContentAlignment="Center"
+      Command="{Binding OnNextClick}"
+      Content="Next"/>
+  </Grid>
+</UserControl>
