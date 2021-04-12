@@ -33,13 +33,13 @@
       HorizontalContentAlignment="Stretch"
       VerticalContentAlignment="Stretch"
       Content="{Binding Task}"/>
-    <Label
+    <CheckBox
       Grid.Row="0" Grid.Column="2"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
       HorizontalContentAlignment="Stretch"
       VerticalContentAlignment="Stretch"
-      Content="{Binding IsFinished}"/>
+      IsChecked="{Binding IsFinished}"/>
     <Button
       Grid.Row="0" Grid.Column="3"
       HorizontalAlignment="Stretch"
@@ -48,5 +48,6 @@
       VerticalContentAlignment="Stretch"
       Command="{Binding OnDeleteClick}"
       Content="Delete"/>
+
   </Grid>
 </UserControl>
