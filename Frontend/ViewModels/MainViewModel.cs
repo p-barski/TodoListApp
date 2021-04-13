@@ -22,7 +22,6 @@ namespace Frontend.ViewModels
 		{
 			this.databaseAccess = databaseAccess;
 			ListView = todoListViewModel;
-			Console.WriteLine(CurrentDate.ToString());
 		}
 		private void OnNextClick()
 		{

@@ -1,3 +1,4 @@
+using System;
 using ReactiveUI;
 using Backend;
 
@@ -5,7 +6,16 @@ namespace Frontend.ViewModels
 {
 	public class TodoItemViewModel : ViewModelBase
 	{
-		public string Date => todoItem.Date.ToString();
+		public TimeSpan Date
+		{
+			get => time;
+			set
+			{
+				this.RaiseAndSetIfChanged(ref time, value);
+				todoItem.Date = todoItem.Date.Date + time;
+				databaseAccess.Update(todoItem);
+			}
+		}
 		public string Task
 		{
 			get => task;
@@ -25,14 +35,16 @@ namespace Frontend.ViewModels
 		public event Deleted? ItemDeletedEvent;
 		private readonly IDatabaseAccess databaseAccess;
 		private readonly TodoItem todoItem;
-		private bool isFinished;
+		private TimeSpan time;
 		private string task;
+		private bool isFinished;
 		public TodoItemViewModel(IDatabaseAccess databaseAccess, TodoItem todoItem)
 		{
 			this.databaseAccess = databaseAccess;
 			this.todoItem = todoItem;
 			isFinished = todoItem.IsFinished;
 			task = todoItem.Task;
+			time = todoItem.Date.TimeOfDay;
 		}
 		private void OnDeleteClick()
 		{

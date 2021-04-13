@@ -20,13 +20,11 @@
       <RowDefinition Height="*" MinHeight="50"/>
     </Grid.RowDefinitions>
 
-    <Label
+    <TimePicker
       Grid.Row="0" Grid.Column="0"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
-      HorizontalContentAlignment="Stretch"
-      VerticalContentAlignment="Stretch"
-      Content="{Binding Date}"/>
+      SelectedTime="{Binding Date, Mode=TwoWay}"/>
     <Label
       Grid.Row="0" Grid.Column="1"
       HorizontalAlignment="Stretch"
