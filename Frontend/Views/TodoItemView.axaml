@@ -14,6 +14,7 @@
       <ColumnDefinition Width="10*"/>
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
       <RowDefinition Height="*" MinHeight="50"/>
@@ -32,16 +33,37 @@
       VerticalAlignment="Stretch"
       HorizontalContentAlignment="Stretch"
       VerticalContentAlignment="Stretch"
+      Name="TaskLabel"
       Content="{Binding Task}"/>
-    <CheckBox
+    <TextBox
+      Grid.Row="0" Grid.Column="1"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      HorizontalContentAlignment="Stretch"
+      VerticalContentAlignment="Stretch"
+      Name="TaskTextBox"
+      IsVisible="False"
+      Text="{Binding Task}"/>
+    <Button
       Grid.Row="0" Grid.Column="2"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      HorizontalContentAlignment="Stretch"
+      VerticalContentAlignment="Stretch"
+      MinWidth="100"
+      Name="EditSaveButton"
+      Click="OnEditSaveClick"
+      Command="{Binding OnEditSaveCommand}"
+      Content="Edit"/>
+    <CheckBox
+      Grid.Row="0" Grid.Column="3"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
       HorizontalContentAlignment="Stretch"
       VerticalContentAlignment="Stretch"
       IsChecked="{Binding IsFinished}"/>
     <Button
-      Grid.Row="0" Grid.Column="3"
+      Grid.Row="0" Grid.Column="4"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
       HorizontalContentAlignment="Stretch"

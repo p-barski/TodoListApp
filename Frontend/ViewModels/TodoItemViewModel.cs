@@ -6,7 +6,11 @@ namespace Frontend.ViewModels
 	public class TodoItemViewModel : ViewModelBase
 	{
 		public string Date => todoItem.Date.ToString();
-		public string Task => todoItem.Task;
+		public string Task
+		{
+			get => task;
+			set => this.RaiseAndSetIfChanged(ref task, value);
+		}
 		public bool IsFinished
 		{
 			get => isFinished;
@@ -22,16 +26,27 @@ namespace Frontend.ViewModels
 		private readonly IDatabaseAccess databaseAccess;
 		private readonly TodoItem todoItem;
 		private bool isFinished;
+		private string task;
 		public TodoItemViewModel(IDatabaseAccess databaseAccess, TodoItem todoItem)
 		{
 			this.databaseAccess = databaseAccess;
 			this.todoItem = todoItem;
 			isFinished = todoItem.IsFinished;
+			task = todoItem.Task;
 		}
 		private void OnDeleteClick()
 		{
 			databaseAccess.Remove(todoItem);
 			ItemDeletedEvent?.Invoke(this);
+		}
+		private void OnEditSaveCommand()
+		{
+			if (todoItem.Task == task)
+			{
+				return;
+			}
+			todoItem.Task = task;
+			databaseAccess.Update(todoItem);
 		}
 	}
 }

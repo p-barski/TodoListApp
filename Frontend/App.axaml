@@ -18,5 +18,9 @@
             <Setter Property="FontSize" Value="34"/>
             <Setter Property="FontFamily" Value="Mono Sans"/>
         </Style>
+        <Style Selector="TextBox">
+            <Setter Property="FontSize" Value="34"/>
+            <Setter Property="FontFamily" Value="Mono Sans"/>
+        </Style>
     </Application.Styles>
 </Application>
