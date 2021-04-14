@@ -16,6 +16,7 @@ namespace Frontend.ViewModels
 			{
 				this.RaiseAndSetIfChanged(ref currentDate, value.Date);
 				TodoListView.FillItems(currentDate);
+				TodoItemCreationView.Date = currentDate;
 			}
 		}
 		public GridLength RowHeight
