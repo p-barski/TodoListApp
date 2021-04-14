@@ -3,7 +3,6 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Frontend.ViewModels;
 using Frontend.Views;
-using Backend;
 using Backend.Implementations;
 
 namespace Frontend
@@ -14,16 +13,15 @@ namespace Frontend
 		{
 			AvaloniaXamlLoader.Load(this);
 		}
-
 		public override void OnFrameworkInitializationCompleted()
 		{
 			if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
 			{
 				var databaseAccess = DatabaseCreator.CreateDatabaseAccess();
-				databaseAccess.Add(new TodoItem() { Date = System.DateTime.Now, Task = "Test" });
 				var factory = new TodoItemViewFactory(databaseAccess);
-				var view = new TodoListViewModel(databaseAccess, factory);
-				var mainViewModel = new MainViewModel(databaseAccess, view);
+				var listViewModel = new TodoListViewModel(databaseAccess, factory);
+				var creationViewModel = new TodoItemCreationViewModel(databaseAccess);
+				var mainViewModel = new MainViewModel(listViewModel, creationViewModel);
 				var mainWindow = new MainWindowViewModel(mainViewModel);
 				desktop.MainWindow = new MainWindow
 				{
