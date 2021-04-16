@@ -8,13 +8,13 @@
   d:DesignHeight="450"
   x:Class="Frontend.Views.TodoItemView">
 
-  <Grid ShowGridLines="True">
+  <Grid>
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="*"/>
-      <ColumnDefinition Width="10*"/>
-      <ColumnDefinition Width="*"/>
-      <ColumnDefinition Width="*"/>
-      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="200"/>
+      <ColumnDefinition Width="*" MinWidth="60"/>
+      <ColumnDefinition Width="110"/>
+      <ColumnDefinition Width="30"/>
+      <ColumnDefinition Width="150"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
       <RowDefinition Height="*" MinHeight="50"/>
@@ -25,20 +25,13 @@
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
       SelectedTime="{Binding Date, Mode=TwoWay}"/>
-    <Label
+    <TextBlock
       Grid.Row="0" Grid.Column="1"
-      HorizontalAlignment="Stretch"
-      VerticalAlignment="Stretch"
-      HorizontalContentAlignment="Stretch"
-      VerticalContentAlignment="Stretch"
-      Name="TaskLabel"
-      Content="{Binding Task}"/>
+      TextWrapping="Wrap"
+      Name="TaskTextBlock"
+      Text="{Binding Task}"/>
     <TextBox
       Grid.Row="0" Grid.Column="1"
-      HorizontalAlignment="Stretch"
-      VerticalAlignment="Stretch"
-      HorizontalContentAlignment="Stretch"
-      VerticalContentAlignment="Stretch"
       Name="TaskTextBox"
       IsVisible="False"
       Text="{Binding Task}"/>
@@ -48,17 +41,12 @@
       VerticalAlignment="Stretch"
       HorizontalContentAlignment="Stretch"
       VerticalContentAlignment="Stretch"
-      MinWidth="100"
       Name="EditSaveButton"
       Click="OnEditSaveClick"
       Command="{Binding OnEditSaveCommand}"
       Content="Edit"/>
     <CheckBox
       Grid.Row="0" Grid.Column="3"
-      HorizontalAlignment="Stretch"
-      VerticalAlignment="Stretch"
-      HorizontalContentAlignment="Stretch"
-      VerticalContentAlignment="Stretch"
       IsChecked="{Binding IsFinished}"/>
     <Button
       Grid.Row="0" Grid.Column="4"

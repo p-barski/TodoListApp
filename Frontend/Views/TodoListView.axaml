@@ -9,6 +9,8 @@
   x:Class="Frontend.Views.TodoListView">
 
   <ScrollViewer>
-    <ItemsControl Items="{Binding ItemViewModels}"/>
+    <ItemsControl
+      Name="Items"
+      Items="{Binding ItemViewModels}"/>
   </ScrollViewer>
 </UserControl>

@@ -8,7 +8,7 @@ namespace Frontend.Views
 	{
 		private readonly string editText = "Edit";
 		private readonly string saveText = "Save";
-		private Label? taskLabel;
+		private TextBlock? taskTextBlock;
 		private TextBox? taskTextBox;
 		private Button? editSaveButton;
 		public TodoItemView()
@@ -18,7 +18,7 @@ namespace Frontend.Views
 		protected override void OnInitialized()
 		{
 			base.OnInitialized();
-			taskLabel = this.Find<Label>("TaskLabel");
+			taskTextBlock = this.Find<TextBlock>("TaskTextBlock");
 			taskTextBox = this.Find<TextBox>("TaskTextBox");
 			editSaveButton = this.Find<Button>("EditSaveButton");
 		}
@@ -28,7 +28,7 @@ namespace Frontend.Views
 		}
 		private void OnEditSaveClick(object sender, RoutedEventArgs e)
 		{
-			taskLabel!.IsVisible = !taskLabel!.IsVisible;
+			taskTextBlock!.IsVisible = !taskTextBlock!.IsVisible;
 			taskTextBox!.IsVisible = !taskTextBox!.IsVisible;
 			if (editSaveButton!.Content.Equals(editText))
 			{
