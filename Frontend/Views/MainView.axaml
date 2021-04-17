@@ -21,12 +21,26 @@
       <RowDefinition Height="*" MinHeight="50"/>
     </Grid.RowDefinitions>
 
+    <Panel
+      Grid.Row="0" Grid.Column="0"
+      Grid.ColumnSpan="3"
+      Background="Black"
+      Opacity="0.3"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      PointerPressed="TitleBarPressedEventHandler"/>
     <DatePicker
       Grid.Row="0" Grid.Column="0"
       Grid.ColumnSpan="3"
       HorizontalAlignment="Center"
       VerticalAlignment="Center"
       SelectedDate="{Binding CurrentDate, Mode=TwoWay}"/>
+    <UserControl
+      Grid.Row="0" Grid.Column="2"
+      HorizontalAlignment="Right"
+      HorizontalContentAlignment="Right"
+      Content="{Binding WindowControlsView}"/>
+
     <UserControl
       Grid.Row="1" Grid.Column="0"
       Grid.ColumnSpan="3"

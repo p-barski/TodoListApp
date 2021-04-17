@@ -21,7 +21,9 @@ namespace Frontend
 				var factory = new TodoItemViewFactory(databaseAccess);
 				var listViewModel = new TodoListViewModel(databaseAccess, factory);
 				var creationViewModel = new TodoItemCreationViewModel(databaseAccess);
-				var mainViewModel = new MainViewModel(listViewModel, creationViewModel);
+				var windowControlsViewModel = new WindowControlsViewModel();
+				var mainViewModel = new MainViewModel(listViewModel,
+					creationViewModel, windowControlsViewModel);
 				var mainWindow = new MainWindowViewModel(mainViewModel);
 				desktop.MainWindow = new MainWindow
 				{

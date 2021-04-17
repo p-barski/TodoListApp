@@ -13,8 +13,11 @@
     Background="Transparent"
     TransparencyLevelHint="AcrylicBlur"
     ExtendClientAreaToDecorationsHint="True"
+    ExtendClientAreaChromeHints="PreferSystemChrome"
+    ExtendClientAreaTitleBarHeightHint="-1"
+    HasSystemDecorations="False"
     MinHeight="300"
-    MinWidth="550">
+    MinWidth="600">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>

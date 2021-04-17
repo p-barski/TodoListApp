@@ -9,6 +9,7 @@ namespace Frontend.ViewModels
 	{
 		public TodoListViewModel TodoListView { get; }
 		public TodoItemCreationViewModel TodoItemCreationView { get; }
+		public WindowControlsViewModel WindowControlsView { get; }
 		public DateTimeOffset CurrentDate
 		{
 			get => currentDate;
@@ -37,10 +38,12 @@ namespace Frontend.ViewModels
 		private readonly GridLength normalHeight = new(1, GridUnitType.Star);
 		public MainViewModel(
 			TodoListViewModel todoListViewModel,
-			TodoItemCreationViewModel todoItemCreationViewModel)
+			TodoItemCreationViewModel todoItemCreationViewModel,
+			WindowControlsViewModel windowControlsViewModel)
 		{
 			TodoListView = todoListViewModel;
 			TodoItemCreationView = todoItemCreationViewModel;
+			WindowControlsView = windowControlsViewModel;
 			TodoItemCreationView.ItemCreatedEvent += ItemCreatedEventHandler;
 
 			RowHeight = hiddenHeight;
