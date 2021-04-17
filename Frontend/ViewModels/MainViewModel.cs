@@ -32,7 +32,7 @@ namespace Frontend.ViewModels
 		private DateTime currentDate = DateTime.Now.Date;
 		private GridLength rowHeight;
 		private double rowMinHeight;
-		private readonly double normalMinHeight = 50.0;
+		private readonly double normalMinHeight = 100.0;
 		private readonly GridLength hiddenHeight = new(0.0);
 		private readonly GridLength normalHeight = new(1, GridUnitType.Star);
 		public MainViewModel(
