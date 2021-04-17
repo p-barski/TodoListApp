@@ -10,23 +10,24 @@
 
   <Grid>
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="200"/>
+      <ColumnDefinition Width="Auto"/>
       <ColumnDefinition Width="*" MinWidth="60"/>
-      <ColumnDefinition Width="110"/>
+      <ColumnDefinition Width="100"/>
       <ColumnDefinition Width="30"/>
-      <ColumnDefinition Width="150"/>
+      <ColumnDefinition Width="100"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
-      <RowDefinition Height="*" MinHeight="50"/>
+      <RowDefinition MinHeight="40"/>
     </Grid.RowDefinitions>
 
     <TimePicker
       Grid.Row="0" Grid.Column="0"
-      HorizontalAlignment="Stretch"
-      VerticalAlignment="Stretch"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center"
       SelectedTime="{Binding Date, Mode=TwoWay}"/>
     <TextBlock
       Grid.Row="0" Grid.Column="1"
+      VerticalAlignment="Center"
       TextWrapping="Wrap"
       Name="TaskTextBlock"
       Text="{Binding Task}"/>
@@ -39,21 +40,22 @@
       Grid.Row="0" Grid.Column="2"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
-      HorizontalContentAlignment="Stretch"
-      VerticalContentAlignment="Stretch"
+      HorizontalContentAlignment="Center"
+      VerticalContentAlignment="Center"
       Name="EditSaveButton"
       Click="OnEditSaveClick"
       Command="{Binding OnEditSaveCommand}"
       Content="Edit"/>
     <CheckBox
       Grid.Row="0" Grid.Column="3"
+      Margin="8,0,0,0"
       IsChecked="{Binding IsFinished}"/>
     <Button
       Grid.Row="0" Grid.Column="4"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
-      HorizontalContentAlignment="Stretch"
-      VerticalContentAlignment="Stretch"
+      HorizontalContentAlignment="Center"
+      VerticalContentAlignment="Center"
       Command="{Binding OnDeleteClick}"
       Content="Delete"/>
 
