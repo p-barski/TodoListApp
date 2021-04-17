@@ -9,7 +9,7 @@
     d:DesignWidth="800"
     d:DesignHeight="450"
     Icon="/Assets/avalonia-logo.ico"
-    Title="Frontend"
+    Title="TodoApp"
     Background="Transparent"
     TransparencyLevelHint="AcrylicBlur"
     ExtendClientAreaToDecorationsHint="True"
