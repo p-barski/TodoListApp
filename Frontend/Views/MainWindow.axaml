@@ -14,7 +14,7 @@
     TransparencyLevelHint="AcrylicBlur"
     ExtendClientAreaToDecorationsHint="True"
     MinHeight="300"
-    MinWidth="300">
+    MinWidth="550">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
