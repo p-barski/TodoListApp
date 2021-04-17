@@ -15,17 +15,17 @@
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
-      <RowDefinition Height="*" MinHeight="50"/>
+      <RowDefinition Height="Auto"/>
       <RowDefinition Height="10*" MinHeight="50"/>
       <RowDefinition Height="{Binding RowHeight, Mode=TwoWay}" MinHeight="{Binding RowMinHeight}"/>
-      <RowDefinition Height="2*" MinHeight="50"/>
+      <RowDefinition Height="*" MinHeight="50"/>
     </Grid.RowDefinitions>
 
     <DatePicker
       Grid.Row="0" Grid.Column="0"
       Grid.ColumnSpan="3"
-      HorizontalAlignment="Stretch"
-      VerticalAlignment="Stretch"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center"
       SelectedDate="{Binding CurrentDate, Mode=TwoWay}"/>
     <UserControl
       Grid.Row="1" Grid.Column="0"
